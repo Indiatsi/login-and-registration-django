@@ -16,6 +16,3 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'nbar' : 'register','form' : form})
-
-def login(request):
-    return render(request, 'registration/login.html', {'nbar' : 'login'})
