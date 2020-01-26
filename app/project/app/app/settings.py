@@ -78,13 +78,8 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'test',
-        'USER': 'louji@loujiexample',
-        'PASSWORD': 'Racheal@10',
-        'HOST': 'loujiexample.mysql.database.azure.com',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
-        
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), 
     }
 }
 
@@ -127,5 +122,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = '/login/user_login/'

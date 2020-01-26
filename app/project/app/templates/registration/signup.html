@@ -1,11 +1,57 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div  style="margin-top: 20%;margin-left:20%">
-        <h2>Sign Up</h2>
-        <form method="post">
-            {% csrf_token %} 
-            {{ form.as_p }}
-            <button type="submin">Register</button>
-        </form>
+    <div class="card card-body mx-auto mt-5" style = "width:40%;">
+  
+        <h5 class="card-header info-color white-text text-center py-4">
+          <strong>Register</strong>
+        </h5>
+
+        <!-- Form -->
+        <form method="get" class="text-center" style="color: #757575;" action="#!">
+            {% csrf_token %}
+            <br>
+            {{form.as_p}}
+              <div class="d-flex justify-content-around">
+                <div>
+                  <!-- Remember me -->
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+                    <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+                  </div>
+                </div>
+                <div>
+                  <!-- Forgot password -->
+                  <a href="">Forgot password?</a>
+                </div>
+              </div>
+        
+              <!-- Sign in button -->
+              <button href="{% url 'home' %}" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Register</button>
+        
+              <!-- Register -->
+              <p>Already have an account?
+              <!--Change this path-->
+                <a href="{%url 'login' %}">Sign In</a>
+              </p>
+        
+              <!-- Social login -->
+              <p>or sign in with:</p>
+              <a type="button" class="btn-floating btn-fb btn-sm">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a type="button" class="btn-floating btn-tw btn-sm">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a type="button" class="btn-floating btn-li btn-sm">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a type="button" class="btn-floating btn-git btn-sm">
+                <i class="fab fa-github"></i>
+              </a>
+        
+            </form>
+            <!-- Form -->
+        </div>
     </div>
+            
 {% endblock content %}
